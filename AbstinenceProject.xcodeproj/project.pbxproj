@@ -15,6 +15,8 @@
 		96341EB31FE11A0300C9E634 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96341EB21FE11A0300C9E634 /* main.m */; };
 		96341EBD1FE11A0300C9E634 /* AbstinenceProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96341EBC1FE11A0300C9E634 /* AbstinenceProjectTests.m */; };
 		96341EC81FE11A0300C9E634 /* AbstinenceProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96341EC71FE11A0300C9E634 /* AbstinenceProjectUITests.m */; };
+		96341ED91FE12A2E00C9E634 /* DZHMinuteMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96341ED81FE12A2E00C9E634 /* DZHMinuteMoreView.m */; };
+		EB57699A81D5233806EEB2BD /* libPods-AbstinenceProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CB2F8A39ABAA1F72B14135 /* libPods-AbstinenceProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		96341EC31FE11A0300C9E634 /* AbstinenceProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbstinenceProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96341EC71FE11A0300C9E634 /* AbstinenceProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstinenceProjectUITests.m; sourceTree = "<group>"; };
 		96341EC91FE11A0300C9E634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96341ED71FE12A2E00C9E634 /* DZHMinuteMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZHMinuteMoreView.h; sourceTree = "<group>"; };
+		96341ED81FE12A2E00C9E634 /* DZHMinuteMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZHMinuteMoreView.m; sourceTree = "<group>"; };
+		A3CB2F8A39ABAA1F72B14135 /* libPods-AbstinenceProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AbstinenceProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B87BB0A08DC6A8F4A71F52E7 /* Pods-AbstinenceProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbstinenceProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbstinenceProject/Pods-AbstinenceProject.release.xcconfig"; sourceTree = "<group>"; };
+		F111936C9A146C97D8828662 /* Pods-AbstinenceProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbstinenceProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbstinenceProject/Pods-AbstinenceProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB57699A81D5233806EEB2BD /* libPods-AbstinenceProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48749CF1CD09FD217D1F0AEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3CB2F8A39ABAA1F72B14135 /* libPods-AbstinenceProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		96341E971FE11A0300C9E634 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +101,8 @@
 				96341EBB1FE11A0300C9E634 /* AbstinenceProjectTests */,
 				96341EC61FE11A0300C9E634 /* AbstinenceProjectUITests */,
 				96341EA11FE11A0300C9E634 /* Products */,
+				E6BA471C413C4C7C52F366D0 /* Pods */,
+				48749CF1CD09FD217D1F0AEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +123,7 @@
 				96341EA41FE11A0300C9E634 /* AppDelegate.m */,
 				96341EA61FE11A0300C9E634 /* ViewController.h */,
 				96341EA71FE11A0300C9E634 /* ViewController.m */,
+				96341ED61FE12A0800C9E634 /* MinuteMore */,
 				96341EA91FE11A0300C9E634 /* Main.storyboard */,
 				96341EAC1FE11A0300C9E634 /* Assets.xcassets */,
 				96341EAE1FE11A0300C9E634 /* LaunchScreen.storyboard */,
@@ -132,6 +151,24 @@
 			path = AbstinenceProjectUITests;
 			sourceTree = "<group>";
 		};
+		96341ED61FE12A0800C9E634 /* MinuteMore */ = {
+			isa = PBXGroup;
+			children = (
+				96341ED71FE12A2E00C9E634 /* DZHMinuteMoreView.h */,
+				96341ED81FE12A2E00C9E634 /* DZHMinuteMoreView.m */,
+			);
+			path = MinuteMore;
+			sourceTree = "<group>";
+		};
+		E6BA471C413C4C7C52F366D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F111936C9A146C97D8828662 /* Pods-AbstinenceProject.debug.xcconfig */,
+				B87BB0A08DC6A8F4A71F52E7 /* Pods-AbstinenceProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96341ECC1FE11A0300C9E634 /* Build configuration list for PBXNativeTarget "AbstinenceProject" */;
 			buildPhases = (
+				ECCD1614933984C12DCB5BDE /* [CP] Check Pods Manifest.lock */,
 				96341E9C1FE11A0300C9E634 /* Sources */,
 				96341E9D1FE11A0300C9E634 /* Frameworks */,
 				96341E9E1FE11A0300C9E634 /* Resources */,
+				3BC1DEF619529C7891B1817B /* [CP] Embed Pods Frameworks */,
+				E1ACA5B574CA235B880E9B93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,11 +300,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3BC1DEF619529C7891B1817B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbstinenceProject/Pods-AbstinenceProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1ACA5B574CA235B880E9B93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AbstinenceProject/Pods-AbstinenceProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECCD1614933984C12DCB5BDE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AbstinenceProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96341E9C1FE11A0300C9E634 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96341ED91FE12A2E00C9E634 /* DZHMinuteMoreView.m in Sources */,
 				96341EA81FE11A0300C9E634 /* ViewController.m in Sources */,
 				96341EB31FE11A0300C9E634 /* main.m in Sources */,
 				96341EA51FE11A0300C9E634 /* AppDelegate.m in Sources */,
@@ -428,6 +520,7 @@
 		};
 		96341ECD1FE11A0300C9E634 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F111936C9A146C97D8828662 /* Pods-AbstinenceProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +535,7 @@
 		};
 		96341ECE1FE11A0300C9E634 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B87BB0A08DC6A8F4A71F52E7 /* Pods-AbstinenceProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
