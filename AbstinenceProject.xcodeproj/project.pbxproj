@@ -55,6 +55,7 @@
 		96341EC91FE11A0300C9E634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96341ED71FE12A2E00C9E634 /* DZHMinuteMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZHMinuteMoreView.h; sourceTree = "<group>"; };
 		96341ED81FE12A2E00C9E634 /* DZHMinuteMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZHMinuteMoreView.m; sourceTree = "<group>"; };
+		96341EDA1FE1347B00C9E634 /* MinuteMorePortocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinuteMorePortocol.h; sourceTree = "<group>"; };
 		A3CB2F8A39ABAA1F72B14135 /* libPods-AbstinenceProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AbstinenceProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87BB0A08DC6A8F4A71F52E7 /* Pods-AbstinenceProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbstinenceProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbstinenceProject/Pods-AbstinenceProject.release.xcconfig"; sourceTree = "<group>"; };
 		F111936C9A146C97D8828662 /* Pods-AbstinenceProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbstinenceProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbstinenceProject/Pods-AbstinenceProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 			children = (
 				96341ED71FE12A2E00C9E634 /* DZHMinuteMoreView.h */,
 				96341ED81FE12A2E00C9E634 /* DZHMinuteMoreView.m */,
+				96341EDA1FE1347B00C9E634 /* MinuteMorePortocol.h */,
 			);
 			path = MinuteMore;
 			sourceTree = "<group>";

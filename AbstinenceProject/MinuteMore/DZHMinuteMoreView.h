@@ -7,19 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MinuteMorePortocol.h"
 
-@protocol MinuteMoreData <NSObject>
 
-@property (nonatomic, strong) NSMutableArray *listArray;
-
-@end
 
 @interface DZHMinuteMoreView : UIView
 
 @end
+
+
 
 @interface DZHMinuteConfigCell : UICollectionViewCell
 
 @property (nonatomic, strong) NSString *titleString;
 
 @end
+
+
