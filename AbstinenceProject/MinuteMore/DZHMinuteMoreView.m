@@ -8,11 +8,11 @@
 
 #import "DZHMinuteMoreView.h"
 
-@interface DZHMinuteMoreView () //<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface DZHMinuteMoreView () <UITableViewDelegate, UITableViewDataSource>//<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray <id<MinuteMoreData>>*listArray;
 
-@property (nonatomic, strong)
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -33,61 +33,97 @@
 
 - (void)initialView {
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    CGFloat originY = 0;
-//    for (int i = 0; i < 2; i++) {
-//        CGFloat height = self.frame.size.height/2;
-//        UICollectionViewFlowLayout *collectionLayout = [[UICollectionViewFlowLayout alloc] init];
-//        collectionLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//        collectionLayout.minimumLineSpacing = 0;
-//        collectionLayout.minimumInteritemSpacing = 0;
-//        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, originY, self.frame.size.width, height) collectionViewLayout:collectionLayout];
-//        collectionView.delegate = self;
-//        collectionView.dataSource = self;
-//        collectionView.tag = i;
-//        [self addSubview:collectionView];
-//        [collectionView registerClass:[DZHMinuteConfigCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([DZHMinuteConfigCell class])];
-//    }
+    self.tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self addSubview:self.tableView];
 }
 
-//#pragma mark - UICollectionView
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    DZHMinuteConfigCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([DZHMinuteConfigCell class]) forIndexPath:indexPath];
-//
-//    return cell;
-//}
-//
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    id<MinuteMoreData> moreData = [self.listArray objectAtIndex:collectionView.tag];
-//    return moreData.listArray.count;
-//}
-//
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//    return 1;
-//}
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    return CGSizeMake(40, 40);
-//}
-//
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//
-//}
+#pragma mark - UITableViewDelegate UITableViewDataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DZHMinuteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123123"];
+    if (nil == cell) {
+        cell = [[DZHMinuteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123123"];
+    }
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.listArray.count+5;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
 
 @end
 
-@interface DZHMinuteConfigCell ()
+
+@interface DZHMinuteTableViewCell () <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+//@property (nonatomic, assign) int
+
+@end
+
+@implementation DZHMinuteTableViewCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        UICollectionViewFlowLayout *collectionLayout = [[UICollectionViewFlowLayout alloc] init];
+        collectionLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        collectionLayout.minimumLineSpacing = 0;
+        collectionLayout.minimumInteritemSpacing = 0;
+        self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:collectionLayout];
+        self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
+        [self addSubview:self.collectionView];
+        [self.collectionView registerClass:[DZHMinuteCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([DZHMinuteCollectionViewCell class])];
+    }
+    return self;
+}
+
+#pragma mark - UICollectionView
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    DZHMinuteCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([DZHMinuteCollectionViewCell class]) forIndexPath:indexPath];
+    cell.titleString = [NSString stringWithFormat:@"%ld-%ld", indexPath.row, indexPath.section];
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 20;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(40, self.frame.size.height);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"didselect at indexPath %ld %ld", indexPath.section, indexPath.row);
+}
+
+@end
+
+@interface DZHMinuteCollectionViewCell ()
 
 @property (nonatomic, strong) UILabel *label;
 
 @end
 
-@implementation DZHMinuteConfigCell
+@implementation DZHMinuteCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        [self addSubview:label];
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        self.label.textColor = [UIColor redColor];
+        [self addSubview:self.label];
     }
     return self;
 }
@@ -95,7 +131,10 @@
 - (void)setTitleString:(NSString *)titleString {
     if (_titleString != titleString) {
         _titleString = titleString;
+        self.label.text = titleString;
     }
 }
 
 @end
+
+

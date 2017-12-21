@@ -17,10 +17,13 @@
 
 
 
-@interface DZHMinuteConfigCell : UICollectionViewCell
+@interface DZHMinuteTableViewCell : UITableViewCell
+
+@end
+
+@interface DZHMinuteCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) NSString *titleString;
 
 @end
-
 

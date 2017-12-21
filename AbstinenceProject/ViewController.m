@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DZHMinuteMoreView.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    DZHMinuteMoreView *v = [[DZHMinuteMoreView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:v];
 }
 
 
