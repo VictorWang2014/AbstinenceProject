@@ -12,3 +12,11 @@
 @property (nonatomic, strong) NSMutableArray *listArray;
 
 @end
+
+@protocol CellItemProtocol <NSObject>
+
+@property (nonatomic, assign) CGFloat CellHeight;
+
+@property (nonatomic, retain) Class TableCellClass;
+
+@end

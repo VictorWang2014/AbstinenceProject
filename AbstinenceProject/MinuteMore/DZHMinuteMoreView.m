@@ -7,10 +7,12 @@
 //
 
 #import "DZHMinuteMoreView.h"
+#import "CustomTableViewCell.h"
+#import "OneCollectionTableViewCell.h"
 
-@interface DZHMinuteMoreView () <UITableViewDelegate, UITableViewDataSource>//<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface DZHMinuteMoreView () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray <id<MinuteMoreData>>*listArray;
+@property (nonatomic, strong) NSMutableArray <id<CellItemProtocol>>*listArray;
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -41,18 +43,20 @@
 
 #pragma mark - UITableViewDelegate UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DZHMinuteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123123"];
-    if (nil == cell) {
-        cell = [[DZHMinuteTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123123"];
+    OneCollectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OneCollectionTableViewCell class])];
+    if (cell == nil) {
+        cell = [[OneCollectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([OneCollectionTableViewCell class])];
     }
+    
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.listArray.count+5;
+    return self.listArray.count+1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = [self.listArray objectAtIndex:indexPath.row].CellHeight;
     return 100;
 }
 
